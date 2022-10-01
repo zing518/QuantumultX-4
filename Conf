@@ -146,4 +146,3 @@ skip_validating_cert = false
 force_sni_domain_name = false
 hostname = sub.store, -*.amemv.com, -*.snssdk.com
 simple_cert_hostname=sub.store
-hostname = *.googlevideo.com
