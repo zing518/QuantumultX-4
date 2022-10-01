@@ -133,6 +133,8 @@ https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.re
 # 本地重写
 # Sub-Store
 ^https?:\/\/sub\.store url script-analyze-echo-response https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js
+# Youtube去广告
+^https://[\s\S]*\.googlevideo\.com url script-analyze-echo-response https://choler.github.io/Surge/Script/YouTube.js
 
 [task_local]
 event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/geo_location.js, tag=GeoIP查询, img-url=location.fill.viewfinder.system
@@ -144,3 +146,4 @@ skip_validating_cert = false
 force_sni_domain_name = false
 hostname = sub.store, -*.amemv.com, -*.snssdk.com
 simple_cert_hostname=sub.store
+hostname = *.googlevideo.com
