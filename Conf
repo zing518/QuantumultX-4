@@ -133,7 +133,7 @@ https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.re
 # 本地重写
 # Sub-Store
 ^https?:\/\/sub\.store url script-analyze-echo-response https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js
-# Youtube去广告
+# Youtube去广告-需观看一次广告识别广告后生效
 ^https://[\s\S]*\.googlevideo\.com url script-analyze-echo-response https://choler.github.io/Surge/Script/YouTube.js
 # Bibili去广告
 ^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/dynamic_(history|new)\? url script-analyze-echo-response https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.js
