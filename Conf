@@ -66,18 +66,18 @@ address=/mtalk.google.com/108.177.125.188
 ## 策略组
 ## 将分流规则传递过来的网络请求进行分发
 # 自动选择最优节点-HK
-url-latency-benchmark=Auto-HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Auto.png
+url-latency-benchmark=Auto-HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, check-interval=600, tolerance=0, alive-checking=ture, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Auto.png
 # 服务器按地区分组策略
 # 美国
-static=US, server-tag-regex=美|美国|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|us, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/US.png
+static=US, server-tag-regex=美|美国|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|us, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/US.png
 # 香港
-static=HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/HK02.png
+static=HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/HK02.png
 # 日本
-static= JP, server-tag-regex= 日|日本|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/JP.png
+static= JP, server-tag-regex= 日|日本|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/JP.png
 # 台湾
-static=TW, server-tag-regex=台|台湾|TW, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/TW02.png
+static=TW, server-tag-regex=台|台湾|TW, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/TW02.png
 # 新加坡
-static=SG, server-tag-regex=狮城|新|新加坡|🇸🇬|SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/SG.png
+static=SG, server-tag-regex=狮城|新|新加坡|🇸🇬|SG, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/SG.png
 # > YouTube策略
 static=YouTube, US, HK, JP, TW, SG, Final, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Youtube.png
 # 国内媒体细分策略
