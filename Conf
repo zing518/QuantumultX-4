@@ -66,7 +66,7 @@ address=/mtalk.google.com/108.177.125.188
 ## 策略组
 ## 将分流规则传递过来的网络请求进行分发
 # 自动选择最优节点-HK
-url-latency-benchmark=Auto-HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, check-interval=600, tolerance=0, alive-checking=ture, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Auto.png
+url-latency-benchmark=Auto-HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, check-interval=600, tolerance=0, alive-checking=true, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Auto.png
 # 服务器按地区分组策略
 # 美国
 static=US, server-tag-regex=美|美国|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|us, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/US.png
