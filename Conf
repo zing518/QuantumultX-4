@@ -1,0 +1,104 @@
+# ------------------
+# LazyerConf By Scratchao
+# Update:2022.10
+# Special Thanks: erdongchanyo；zwf234
+# ------------------
+[general]
+# 代理延迟测速 URL 
+# 对指定的网址进行相应测试，以确认节点的可用性
+server_check_url=http://cp.cloudflare.com/generate_204
+# ------------------
+# 资源解析器
+resource_parser_url= https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+# ------------------
+
+[dns]
+no-ipv6
+# DoH服务器(DNS over HTTPS)以加密的HTTPS协议进行DNS解析请求，避免原始DNS协议中用户的DNS解析请求被窃听或者修改的问题（例如中间人攻击）来达到保护用户隐私的目的
+# 设置DoH服务器后，所有其他常规DNS服务器设置将被忽略；当设置了多个DoH服务器时，只会使用第一个；当使用的 DoH服务器不是基于HTTP/2时，DoH将被暂时禁用。
+# 阿里 DoH
+doh-server=https://dns.alidns.com/dns-query
+# 同时使用多个DoH服务器(Tf功能
+# DNS.SB,阿里,红鱼,IIJ
+# doh-server=https://doh.dns.sb/dns-query, https://dns.alidns.com/dns-query, https://rubyfish.cn/dns-query, https://public.dns.iij.jp/dns-query
+# ------------------
+# 常规DNS服务器
+# 腾讯云DNSPod DNS
+server=119.29.29.29
+server=119.28.28.28
+# 阿里 AliDNS
+server=223.5.5.5
+# 114 DNS
+server=114.114.114.114
+# 制定域名解析 dns
+server=/*.taobao.com/223.5.5.5
+server=/*.tmall.com/223.5.5.5
+server=/*.alipay.com/223.5.5.5
+server=/*.aliyun.com/223.5.5.5
+server=/*.jd.com/119.28.28.28
+server=/*.qq.com/119.28.28.28
+server=/*.tencent.com/119.28.28.28
+server=/*.weixin.com/119.28.28.28
+server=/*.bilibili.com/119.29.29.29
+server=/*.netease.com/119.29.29.29
+server=/*testflight.apple.com/23.76.66.98
+server=/*.bilibili.com/119.29.29.29
+server=/hdslb.com/119.29.29.29
+server=/*.163.com/119.29.29.29
+server=/*.126.com/119.29.29.29
+server=/*.126.net/119.29.29.29
+server=/*.127.net/119.29.29.29
+server=/*.mi.com/119.29.29.29
+server=/*.xiaomi.com/119.29.29.29
+address=/mtalk.google.com/108.177.125.188
+[policy]
+## 策略组
+# 自动选择最优节点
+url-latency-benchmark=优选节点, check-interval=1200, tolerance=0, img-url=https://qxnav.com/rules/QuantumultX/img/Urltest.png
+# ------------------
+static=自选节点, 优选节点, proxy, img-url=https://qxnav.com/rules/QuantumultX/img/Static.png
+static=HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/HK02.png
+static=TW, server-tag-regex=台|台湾|TW, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/TW.png
+static=BiliBili, HK, TW, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Bilibili.png
+static=SG, server-tag-regex=狮城|新|新加坡|🇸🇬|SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/SG.png
+static=JP, server-tag-regex= 日|日本|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/JP.png
+# ------------------
+# FINAL策略：如果以上的策略均未被匹配到，则听从此策略组的规定
+static=Final, 优选节点, proxy, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Final01.png
+[server_remote]
+
+
+[filter_remote]
+https://qxnav.com/rules/QuantumultX/gz/advertising.list, tag=广告屏蔽, update-interval=86400, opt-parser=false, enabled=true
+https://qxnav.com/rules/QuantumultX/gz/overseas.list, tag=海外服务, update-interval=172800, opt-parser=false, enabled=true
+https://qxnav.com/rules/QuantumultX/gz/mainland.list, tag=大陆服务, update-interval=172800, opt-parser=false, enabled=true
+[rewrite_remote]
+
+[server_local]
+
+[filter_local]
+## 本地分流规则(相同规则下，本地规则将覆盖远程规则，优先生效)
+# 避免迅雷版权问题
+host, hub5idx.v6.shub.sandai.net, reject
+host, hub5emu.v6.shub.sandai.net, reject
+host, hub5btmain.v6.shub.sandai.net, reject
+# ------------------
+# 其他
+host-suffix, local, direct
+host-keyword, merlinblog, proxy
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 17.0.0.0/8, direct
+ip-cidr, 100.64.0.0/10, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 192.168.0.0/16, direct
+geoip, cn, 大陆服务
+final, 大陆服务
+# ------------------
+[rewrite_local]
+
+[task_local]
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/geo_location.js, tag=GeoIP查询, img-url=location.fill.viewfinder.system
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体解锁检测, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/GMedia.png, enabled=true
+event-interaction https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/TaskLocal/NeteaseMusicUnlockCheck.js, tag=网易音乐查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music_Unlock.png, enabled=true
+[mitm]
