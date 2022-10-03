@@ -71,7 +71,7 @@ url-latency-benchmark=Auto-HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongko
 # 香港
 static=HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/HK02.png
 # 台湾
-static=TW, server-tag-regex=台|台湾|TW, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/TW02.png
+static=TW, server-tag-regex=台|台湾|TW, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/TW.png
 # 新加坡
 static=SG, server-tag-regex=狮城|新|新加坡|🇸🇬|SG, check-interval=1800, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/SG.png
 # 日本
