@@ -65,7 +65,7 @@ static=KR, server-tag-regex=韩|韩国|KR, img-url=https://raw.githubusercontent
 # 美国
 static=US, server-tag-regex=美|美国|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|us, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/US.png
 # Global策略
-static=Global, HK, TW, SG, KR, USFinal, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Outside.png
+static=Global, HK, TW, SG, KR, US, Final, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Outside.png
 # Mainland策略-国内访问
 static=Mainland, Final, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Mainland.png
 # 网易云解锁
