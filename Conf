@@ -75,7 +75,7 @@ static=BiliBili, HK, TW, direct, img-url=https://raw.githubusercontent.com/erdon
 # Advertising策略-去广告
 static=Advertising, direct, reject, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/AdBlock.png
 # FINAL策略：如果以上的策略均未被匹配到，则听从此策略组的规定
-static=Final, Auto-HK, proxy, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Final01.png
+static=Final, 优选节点, proxy, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Final01.png
 [server_remote]
 # 远程节点订阅
 
