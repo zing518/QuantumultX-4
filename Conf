@@ -54,7 +54,7 @@ address=/mtalk.google.com/108.177.125.188
 [policy]
 ## 策略组
 # 自动选择最优节点
-url-latency-benchmark=优选节点, check-interval=1200, tolerance=0, img-url=https://qxnav.com/rules/QuantumultX/img/Urltest.png
+url-latency-benchmark=优选节点, server-tag-regex=^(?!.*网易云), check-interval=1200, tolerance=0, img-url=https://qxnav.com/rules/QuantumultX/img/Urltest.png
 # ------------------
 static=自选节点, 优选节点, proxy, img-url=https://qxnav.com/rules/QuantumultX/img/Static.png
 static=HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/HK02.png
