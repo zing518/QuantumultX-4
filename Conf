@@ -54,15 +54,44 @@ address=/mtalk.google.com/108.177.125.188
 [policy]
 # 策略组
 url-latency-benchmark=优选节点, server-tag-regex=^(?!.*网易云), check-interval=1200, tolerance=0, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Auto.png
+# 香港
+static=HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/HK02.png
+# 台湾
+static=TW, server-tag-regex=台|台湾|TW, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/TW.png
+# 新加坡
+static=SG, server-tag-regex=狮城|新|新加坡|🇸🇬|SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/SG.png
+# 韩国
+static=KR, server-tag-regex=韩|韩国|KR, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/KR.png
+# 美国
+static=US, server-tag-regex=美|美国|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|us, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/US.png
+# Global策略
+static=Global, HK, TW, SG, KR, USFinal, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Outside.png
+# Mainland策略-国内访问
+static=Mainland, Final, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Mainland.png
+# 网易云解锁
+static=网易云音乐, server-tag-regex=(?=.*(网易云|(?i)netease))^((?!(台|日|韩|港|新|美)).)*$, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/NeteaseUnblock.png
+# BiliBili策略
+static=BiliBili, HK, TW, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Bilibili.png
+# Advertising策略-去广告
+static=Advertising, direct, reject, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/AdBlock.png
+# FINAL策略：如果以上的策略均未被匹配到，则听从此策略组的规定
+static=Final, Auto-HK, proxy, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Final01.png
 [server_remote]
 # 远程节点订阅
 
+[server_local]
 
 [filter_remote]
-
+# Global规则
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Global/Global.list, tag=Global, force-policy=Global, update-interval=86400, opt-parser=false, enabled=true
+# BiliBili规则
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list, tag=Bilibili, force-policy=BiliBili, update-interval=172800, opt-parser=false, enabled=true
+# Advertising规则
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Advertising/Advertising.list, tag=Advertising, force-policy=Advertising, update-interval=86400, opt-parser=true, enabled=true
+# Mainland规则
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list, tag=Mainland, force-policy=Mainland, update-interval=86400, opt-parser=false, enabled=true
 [rewrite_remote]
 
-[server_local]
 
 [filter_local]
 # 本地分流规则(相同规则下，本地规则将覆盖远程规则，优先生效)
