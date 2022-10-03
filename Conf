@@ -52,32 +52,18 @@ server=/*.mi.com/119.29.29.29
 server=/*.xiaomi.com/119.29.29.29
 address=/mtalk.google.com/108.177.125.188
 [policy]
-## 策略组
-# 自动选择最优节点
-url-latency-benchmark=优选节点, server-tag-regex=^(?!.*网易云), check-interval=1200, tolerance=0, img-url=https://qxnav.com/rules/QuantumultX/img/Urltest.png
-# ------------------
-static=自选节点, 优选节点, proxy, img-url=https://qxnav.com/rules/QuantumultX/img/Static.png
-static=HK, server-tag-regex=HK|香港|港|🇭🇰️|Hongkong, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/HK02.png
-static=TW, server-tag-regex=台|台湾|TW, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/TW.png
-static=BiliBili, HK, TW, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Bilibili.png
-static=SG, server-tag-regex=狮城|新|新加坡|🇸🇬|SG, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/SG.png
-static=JP, server-tag-regex= 日|日本|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/JP.png
-# ------------------
-# FINAL策略：如果以上的策略均未被匹配到，则听从此策略组的规定
-static=Final, 优选节点, proxy, direct, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Final01.png
+# 策略组
+url-latency-benchmark=优选节点, server-tag-regex=^(?!.*网易云), check-interval=1200, tolerance=0, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Auto.png
 [server_remote]
 
-
 [filter_remote]
-https://qxnav.com/rules/QuantumultX/gz/advertising.list, tag=广告屏蔽, update-interval=86400, opt-parser=false, enabled=true
-https://qxnav.com/rules/QuantumultX/gz/overseas.list, tag=海外服务, update-interval=172800, opt-parser=false, enabled=true
-https://qxnav.com/rules/QuantumultX/gz/mainland.list, tag=大陆服务, update-interval=172800, opt-parser=false, enabled=true
+
 [rewrite_remote]
 
 [server_local]
 
 [filter_local]
-## 本地分流规则(相同规则下，本地规则将覆盖远程规则，优先生效)
+# 本地分流规则(相同规则下，本地规则将覆盖远程规则，优先生效)
 # 避免迅雷版权问题
 host, hub5idx.v6.shub.sandai.net, reject
 host, hub5emu.v6.shub.sandai.net, reject
